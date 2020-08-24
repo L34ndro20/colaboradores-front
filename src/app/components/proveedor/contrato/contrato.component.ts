@@ -52,6 +52,8 @@ export class ContratoComponent implements OnInit {
             this.limpiarCamposCotizacion();
           }
         )
+    } else {
+      swal.fire('', 'Ooops! recuerda digitar todos los datos', 'warning');
     }
   }
 
