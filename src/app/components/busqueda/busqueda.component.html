@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="es">
+
+<body>
+    <h1 class="text-center text-black pt-3"> Tu servicio a la mano!</h1>
+    <section class="busqueda rounded p-5 text-center text-white" style="margin-top: 118px;width: 705px;height: 280px;border-left-width: 35px;margin-left: 361px;">
+        <div class="container">
+            <div class="row p-2">
+                <div class="col-md-4">
+                    <h3 class="text-primary"><strong>Iglesia</strong></h3>
+                </div>
+                <div class="col-md-4">
+                    <ng-select [items]="iglesias" bindLabel="nombre" bindValue="codigo" placeholder="Seleccione Iglesia" appendTo="body" [(ngModel)]="codigoIglesia">
+                    </ng-select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="text-primary"><strong>Servicio</strong></h3>
+                </div>
+                <div class="col-md-4">
+                    <ng-select [items]="servicios" bindLabel="descripcion" bindValue="codigo" placeholder="Seleccione servicio" appendTo="body" [(ngModel)]="codigoServicio">
+                    </ng-select>
+                </div>
+            </div>
+            <div class="row p-5">
+                <div class="col-md-12">
+                    <button class="btn btn-success" (click)="irDetalle()"><i class="fa fa-search" aria-hidden="true"></i> Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

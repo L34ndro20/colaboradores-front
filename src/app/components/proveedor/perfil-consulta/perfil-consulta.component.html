@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="es">
+
+<body>
+
+    <h1 class="display-4 font-weight-bold text-center pb-4 text-dark"></h1>
+    <section class="container pb-4">
+        <div class="card  shadow-sm">
+            <div class="row no-gutters">
+                <div class="col-auto p-2 my-2">
+                    <img src="https://guiadeltrabajo.com/wp-content/uploads/2015/12/foto-solicitud.jpg" class="img-fluid" style="width: 8rem;" alt="">
+                </div>
+                <div class="col p-3 my-3">
+                    <div class="card-block px-1">
+                        <h2 class="card-title text-justify text-dark">{{proveedor?.persona?.nombres}} {{proveedor?.persona?.apellidos}}</h2>
+                        <h4 class="card-title text-justify text-dark">{{proveedor?.persona?.correo}}</h4>
+                        <h4 class="card-title text-justify text-dark">{{proveedor?.persona?.localidad}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container" *ngIf="proveedor">
+        <div class="container py-3">
+            <div class="card">
+                <div class="card-header">
+                    Servicios
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0" *ngFor="let servicio of proveedor.servicio">
+                        <p class="blockquote-footer">{{servicio?.descripcion}}</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="container py-3">
+            <div class="card">
+                <div class="card-header">
+                    Experiencia
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0" *ngFor="let servicio of proveedor.servicio">
+                        <p class="blockquote-footer">{{servicio?.comentarios}}</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-3 text-center">
+        <button type="button" class="btn btn-success" (click)="contratar()"> <em class="fa fa-list-alt"></em> Cotizar</button></div>
+</body>

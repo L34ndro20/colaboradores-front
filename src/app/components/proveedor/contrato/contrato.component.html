@@ -1,0 +1,65 @@
+<body>
+    <div class="container">
+        <h1 class="display-4 font-weight-bold text-center pb-4 text-dark">Cotiza con nuestros expertos</h1>
+        <div class="row justify-content-center">
+
+            <div class="col-3">
+                <form [formGroup]="crearCotizacionForm">
+                    <div class="form-row m-1">
+                        <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre">
+                        <div *ngIf="nombre.invalid && (nombre.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <input type="text" class="form-control" id="apellido" formControlName="apellido" placeholder="Apellido">
+                        <div *ngIf="apellido.invalid && (apellido.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <input type="text" class="form-control" id="telefono" formControlName="telefono" placeholder="Teléfono">
+                        <div *ngIf="telefono.invalid && (telefono.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email">
+                        <div *ngIf="email.invalid && (email.dirty)" class="error-text">
+                            Formato de email incorrecto.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <ng-select [clearable]="false" [items]="listaDepartamento" bindLabel="descripcion" bindValue="codigo" placeholder="Seleccione departamento" appendTo="body" formControlName="codigoDepto" (change)="onChange($event)" style="width: 245px;">
+                        </ng-select>
+                        <div *ngIf="codigoDepto.invalid && (codigoDepto.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <ng-select [clearable]="false" [items]="listaMunicipio" bindLabel="descripcion" bindValue="codigo" placeholder="Seleccione municipio" appendTo="body" formControlName="codigoMunicipio" style="width: 245px;">
+                        </ng-select>
+                        <div *ngIf="codigoMunicipio.invalid && (codigoMunicipio.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <input type="text" class="form-control" id="direccion" formControlName="direccion" placeholder="Dirección">
+                        <div *ngIf="direccion.invalid && (direccion.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1">
+                        <textarea class="form-control rounded-0" id="descripcion" formControlName="descripcion" rows="4"></textarea>
+                        <div *ngIf="descripcion.invalid && (descripcion.dirty)" class="error-text">
+                            Este campo no puede ser nulo.
+                        </div>
+                    </div>
+                    <div class="form-row m-1 text-center">
+                        <button type="submit" style="width: 15rem;" class="btn btn-primary" (click)="guardarCotizacion()">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

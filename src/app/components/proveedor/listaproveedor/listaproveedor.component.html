@@ -1,0 +1,23 @@
+<body>
+    <div class="container">
+        <div class="row card-group">
+            <div class="col-4 py-3" *ngFor="let proveedor of proveedores">
+                <div class="card">
+                    <img class="card-img-top" src="https://image.freepik.com/vector-gratis/perfil-empresario-dibujos-animados_18591-58479.jpg" alt="Card image cap" width="50" height="150">
+                    <div class="card-body">
+                        <h5 class="card-title">{{proveedor.persona.nombres}} {{proveedor.persona.apellidos}}</h5>
+                        <p class="card-text">Mis servicios:</p>
+                        <ul *ngFor="let servi of proveedor.servicio">
+                            <li>{{servi.descripcion}}</li>
+                        </ul>
+                        <p class="card-text">Contacto {{proveedor.persona.telefono}}</p>
+                        <p class="card-text">Contacto {{proveedor.persona.correo}}</p>
+                        <button type="button" class="btn btn-outline-success" (click)="verperfil(proveedor.persona.codigo)">
+                        <em class="fa fa-user"></em>
+                        ver perfil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
